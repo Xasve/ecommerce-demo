@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +22,6 @@
       --radius: 10px;
     }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-
-    /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: rgba(15,15,19,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
     .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); display: flex; align-items: center; gap: .5rem; }
     .nav-brand span { color: var(--accent); }
@@ -36,20 +34,14 @@
     .cart-btn { position: relative; background: var(--accent); border: none; border-radius: 8px; padding: .45rem .9rem; color: white; font-family: inherit; font-size: .85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: .4rem; transition: background .2s; }
     .cart-btn:hover { background: var(--accent-hover); }
     .cart-badge { position: absolute; top: -6px; right: -6px; background: var(--red); color: white; font-size: .65rem; font-weight: 700; border-radius: 999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
-
-    /* HERO */
     .hero { background: linear-gradient(135deg, #13131a 0%, #1a1a2e 100%); padding: 3rem 2rem; text-align: center; border-bottom: 1px solid var(--border); }
     .hero h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: .75rem; }
     .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .hero p { color: var(--muted); font-size: .95rem; max-width: 480px; margin: 0 auto; }
-
-    /* FILTERS */
     .filters-bar { display: flex; align-items: center; gap: .75rem; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); overflow-x: auto; flex-wrap: wrap; }
     .filter-chip { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: .35rem .9rem; font-size: .82rem; color: var(--muted); cursor: pointer; white-space: nowrap; transition: all .2s; }
     .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: white; }
     .sort-select { margin-left: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: .35rem .7rem; color: var(--text); font-family: inherit; font-size: .82rem; cursor: pointer; outline: none; }
-
-    /* PRODUCTS */
     .main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
     .product-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .2s, border-color .2s; cursor: pointer; }
@@ -71,8 +63,6 @@
     .rating-num { color: var(--muted); font-size: .75rem; }
     .stock-low { color: var(--red); font-size: .75rem; margin-top: .3rem; }
     .section-title { font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: 1.25rem; }
-
-    /* CART MODAL */
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 200; }
     .overlay.open { display: flex; align-items: flex-start; justify-content: flex-end; }
     .cart-panel { background: var(--surface); width: 380px; height: 100vh; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; animation: slideIn .25s ease; }
@@ -95,12 +85,8 @@
     .cart-total-row.total { color: var(--text); font-weight: 700; font-size: 1rem; margin-top: .5rem; padding-top: .5rem; border-top: 1px solid var(--border); }
     .checkout-btn { width: 100%; background: var(--accent); border: none; border-radius: 9px; padding: .85rem; color: white; font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; margin-top: .75rem; transition: background .2s; }
     .checkout-btn:hover { background: var(--accent-hover); }
-
-    /* TOAST */
     .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; padding: .65rem 1.25rem; font-size: .85rem; font-weight: 500; z-index: 999; transition: transform .3s; white-space: nowrap; }
     .toast.show { transform: translateX(-50%) translateY(0); }
-
-    /* CHECKOUT MODAL */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 300; align-items: center; justify-content: center; }
     .modal-overlay.open { display: flex; }
     .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; width: 420px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
@@ -120,7 +106,6 @@
     .success-icon { font-size: 3rem; margin-bottom: 1rem; }
     .success-screen h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; }
     .success-screen p { color: var(--muted); font-size: .9rem; }
-
     @media (max-width: 600px) {
       .cart-panel { width: 100vw; }
       nav { padding: 0 1rem; }
@@ -133,103 +118,97 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand"><span>●</span> ShopEthan</div>
   <div class="nav-center">
-    <button class="nav-tab active" onclick="setCategory('all',this)">Todos</button>
-    <button class="nav-tab" onclick="setCategory('tech',this)">Tecnología</button>
-    <button class="nav-tab" onclick="setCategory('ropa',this)">Ropa</button>
-    <button class="nav-tab" onclick="setCategory('hogar',this)">Hogar</button>
+    <button class="nav-tab active" onclick="setCategory('all',this)">All</button>
+    <button class="nav-tab" onclick="setCategory('tech',this)">Tech</button>
+    <button class="nav-tab" onclick="setCategory('clothing',this)">Clothing</button>
+    <button class="nav-tab" onclick="setCategory('home',this)">Home</button>
   </div>
   <div class="nav-right">
-    <input class="search-box" type="text" placeholder="Buscar productos..." oninput="filterSearch(this.value)">
+    <input class="search-box" type="text" placeholder="Search products..." oninput="filterSearch(this.value)">
     <button class="cart-btn" onclick="toggleCart()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-      Carrito
+      Cart
       <span class="cart-badge" id="cart-badge" style="display:none">0</span>
     </button>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>Encuentra lo que <em>necesitas</em></h1>
-  <p>Demo de plataforma e-commerce con carrito, filtros y checkout. Stack: React · Node.js · MongoDB · JWT</p>
+  <h1>Find what you <em>need</em></h1>
+  <p>Full e-commerce platform demo with cart, filters, and checkout. Stack: React · Node.js · MongoDB · JWT</p>
 </div>
 
-<!-- FILTERS -->
 <div class="filters-bar">
-  <span style="font-size:.82rem;color:var(--muted);font-weight:500">Filtrar:</span>
-  <button class="filter-chip active" onclick="setFilter('all',this)">Todos</button>
-  <button class="filter-chip" onclick="setFilter('new',this)">Nuevos</button>
-  <button class="filter-chip" onclick="setFilter('sale',this)">En oferta</button>
-  <button class="filter-chip" onclick="setFilter('top',this)">Más vendidos</button>
+  <span style="font-size:.82rem;color:var(--muted);font-weight:500">Filter:</span>
+  <button class="filter-chip active" onclick="setFilter('all',this)">All</button>
+  <button class="filter-chip" onclick="setFilter('new',this)">New</button>
+  <button class="filter-chip" onclick="setFilter('sale',this)">On Sale</button>
+  <button class="filter-chip" onclick="setFilter('top',this)">Best Sellers</button>
   <select class="sort-select" onchange="sortProducts(this.value)">
-    <option value="default">Ordenar: Relevancia</option>
-    <option value="price-asc">Precio: Menor a Mayor</option>
-    <option value="price-desc">Precio: Mayor a Menor</option>
-    <option value="rating">Mejor Valorados</option>
+    <option value="default">Sort: Relevance</option>
+    <option value="price-asc">Price: Low to High</option>
+    <option value="price-desc">Price: High to Low</option>
+    <option value="rating">Top Rated</option>
   </select>
 </div>
 
-<!-- PRODUCTS -->
 <div class="main">
   <p class="section-title" id="result-count"></p>
   <div class="products-grid" id="products-grid"></div>
 </div>
 
-<!-- CART PANEL -->
 <div class="overlay" id="cart-overlay" onclick="closeCartOutside(event)">
   <div class="cart-panel">
     <div class="cart-header">
-      <h2>Tu Carrito</h2>
+      <h2>Your Cart</h2>
       <button class="close-btn" onclick="toggleCart()">✕</button>
     </div>
     <div id="cart-items"></div>
     <div class="cart-total" id="cart-total" style="display:none">
       <div class="cart-total-row"><span>Subtotal</span><span id="subtotal">$0</span></div>
-      <div class="cart-total-row"><span>Envío</span><span>Gratis</span></div>
+      <div class="cart-total-row"><span>Shipping</span><span>Free</span></div>
       <div class="cart-total-row total"><span>Total</span><span id="total">$0</span></div>
-      <button class="checkout-btn" onclick="openCheckout()">Proceder al Pago →</button>
+      <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout →</button>
     </div>
   </div>
 </div>
 
-<!-- CHECKOUT MODAL -->
 <div class="modal-overlay" id="checkout-modal">
   <div class="modal" id="checkout-content">
-    <h2>Completar Pedido</h2>
+    <h2>Complete Order</h2>
     <div class="order-summary">
-      <div class="order-summary-title">RESUMEN DEL PEDIDO</div>
+      <div class="order-summary-title">ORDER SUMMARY</div>
       <div id="checkout-items"></div>
       <div class="order-line" style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border);font-weight:700">
         <span>Total</span><span id="checkout-total">$0</span>
       </div>
     </div>
-    <div class="section-divider">Información de Contacto</div>
+    <div class="section-divider">Contact Information</div>
     <div class="form-row">
-      <div class="form-group"><label class="form-label">Nombre</label><input class="form-input" placeholder="Juan García"></div>
-      <div class="form-group"><label class="form-label">Apellido</label><input class="form-input" placeholder="López"></div>
+      <div class="form-group"><label class="form-label">First Name</label><input class="form-input" placeholder="John"></div>
+      <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" placeholder="Smith"></div>
     </div>
-    <div class="form-group"><label class="form-label">Email</label><input class="form-input" placeholder="juan@email.com" type="email"></div>
-    <div class="section-divider">Dirección de Envío</div>
-    <div class="form-group"><label class="form-label">Dirección</label><input class="form-input" placeholder="Calle Principal 123"></div>
+    <div class="form-group"><label class="form-label">Email</label><input class="form-input" placeholder="john@email.com" type="email"></div>
+    <div class="section-divider">Shipping Address</div>
+    <div class="form-group"><label class="form-label">Address</label><input class="form-input" placeholder="123 Main Street"></div>
     <div class="form-row">
-      <div class="form-group"><label class="form-label">Ciudad</label><input class="form-input" placeholder="Ciudad"></div>
-      <div class="form-group"><label class="form-label">Código Postal</label><input class="form-input" placeholder="10001"></div>
+      <div class="form-group"><label class="form-label">City</label><input class="form-input" placeholder="New York"></div>
+      <div class="form-group"><label class="form-label">ZIP Code</label><input class="form-input" placeholder="10001"></div>
     </div>
-    <div class="section-divider">Datos de Pago</div>
-    <div class="form-group"><label class="form-label">Número de Tarjeta</label><input class="form-input" placeholder="4242 4242 4242 4242" maxlength="19" oninput="formatCard(this)"></div>
+    <div class="section-divider">Payment Details</div>
+    <div class="form-group"><label class="form-label">Card Number</label><input class="form-input" placeholder="4242 4242 4242 4242" maxlength="19" oninput="formatCard(this)"></div>
     <div class="form-row">
-      <div class="form-group"><label class="form-label">Vencimiento</label><input class="form-input" placeholder="MM/AA" maxlength="5" oninput="formatExp(this)"></div>
+      <div class="form-group"><label class="form-label">Expiry</label><input class="form-input" placeholder="MM/YY" maxlength="5" oninput="formatExp(this)"></div>
       <div class="form-group"><label class="form-label">CVV</label><input class="form-input" placeholder="123" maxlength="3" type="password"></div>
     </div>
     <button class="pay-btn" onclick="processPayment()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:.4rem;vertical-align:middle"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Pagar Ahora — Demo
+      Pay Now — Demo
     </button>
-    <button onclick="closeCheckout()" style="width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:.85rem;cursor:pointer;margin-top:.75rem;">Cancelar</button>
+    <button onclick="closeCheckout()" style="width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:.85rem;cursor:pointer;margin-top:.75rem;">Cancel</button>
   </div>
 </div>
 
@@ -237,18 +216,18 @@
 
 <script>
   const PRODUCTS = [
-    { id:1, name:'Teclado Mecánico Pro', category:'tech', desc:'Switches Cherry MX Red, RGB por tecla, aluminio anodizado. Latencia ultra baja.', price:89, old:120, emoji:'⌨️', rating:4.8, reviews:234, badge:'sale', stock:15 },
-    { id:2, name:'Monitor 4K UltraWide', category:'tech', desc:'34" IPS, 144Hz, 1ms, HDR400. Ideal para trabajo y gaming profesional.', price:399, old:null, emoji:'🖥️', rating:4.9, reviews:89, badge:'top', stock:8 },
-    { id:3, name:'Audífonos ANC Pro', category:'tech', desc:'Cancelación de ruido activa, 30h de batería, audio Hi-Fi con drivers de 40mm.', price:159, old:220, emoji:'🎧', rating:4.7, reviews:412, badge:'sale', stock:22 },
-    { id:4, name:'Mouse Ergonómico', category:'tech', desc:'Diseño vertical, 6 botones programables, sensor óptico de 3200 DPI.', price:45, old:null, emoji:'🖱️', rating:4.5, reviews:178, badge:'new', stock:40 },
-    { id:5, name:'Webcam 4K AutoFocus', category:'tech', desc:'Resolución 4K a 30fps, autofoco inteligente, micrófono estéreo integrado.', price:129, old:160, emoji:'📷', rating:4.6, reviews:95, badge:'sale', stock:12 },
-    { id:6, name:'SSD NVMe 1TB', category:'tech', desc:'Velocidad de lectura 7000MB/s, PCIe 4.0, compatible con PS5.', price:99, old:null, emoji:'💾', rating:4.9, reviews:567, badge:'top', stock:60 },
-    { id:7, name:'Hoodie Premium Negro', category:'ropa', desc:'Algodón 100% orgánico, corte moderno, bolsillo canguro con zipper interior.', price:55, old:75, emoji:'🧥', rating:4.7, reviews:203, badge:'sale', stock:35 },
-    { id:8, name:'Zapatillas Runner X', category:'ropa', desc:'Suela de amortiguación reactiva, upper en mesh transpirable, peso ultra ligero.', price:120, old:null, emoji:'👟', rating:4.8, reviews:342, badge:'top', stock:20 },
-    { id:9, name:'Gorra Snapback', category:'ropa', desc:'6 paneles estructurados, tela técnica antimanchas, ajuste preciso en la espalda.', price:32, old:null, emoji:'🧢', rating:4.4, reviews:88, badge:'new', stock:50 },
-    { id:10, name:'Lámpara LED Desk', category:'hogar', desc:'3 modos de color, 10 niveles de brillo, carga inalámbrica integrada para teléfono.', price:68, old:90, emoji:'💡', rating:4.6, reviews:156, badge:'sale', stock:18 },
-    { id:11, name:'Smart Plug WiFi', category:'hogar', desc:'Control por app, compatible con Alexa y Google Home, medición de consumo en tiempo real.', price:24, old:null, emoji:'🔌', rating:4.5, reviews:290, badge:'new', stock:80 },
-    { id:12, name:'Cafetera Automática', category:'hogar', desc:'15 bar de presión, espumador de leche, 12 recetas programables, tanque 1.8L.', price:189, old:250, emoji:'☕', rating:4.9, reviews:721, badge:'top', stock:5 },
+    { id:1, name:'Mechanical Keyboard Pro', category:'tech', desc:'Cherry MX Red switches, per-key RGB, anodized aluminum. Ultra-low latency.', price:89, old:120, emoji:'⌨️', rating:4.8, reviews:234, badge:'sale', stock:15 },
+    { id:2, name:'4K UltraWide Monitor', category:'tech', desc:'34" IPS, 144Hz, 1ms, HDR400. Perfect for professional work and gaming.', price:399, old:null, emoji:'🖥️', rating:4.9, reviews:89, badge:'top', stock:8 },
+    { id:3, name:'ANC Pro Headphones', category:'tech', desc:'Active noise cancellation, 30h battery, Hi-Fi audio with 40mm drivers.', price:159, old:220, emoji:'🎧', rating:4.7, reviews:412, badge:'sale', stock:22 },
+    { id:4, name:'Ergonomic Mouse', category:'tech', desc:'Vertical design, 6 programmable buttons, 3200 DPI optical sensor.', price:45, old:null, emoji:'🖱️', rating:4.5, reviews:178, badge:'new', stock:40 },
+    { id:5, name:'4K AutoFocus Webcam', category:'tech', desc:'4K at 30fps, smart autofocus, integrated stereo microphone.', price:129, old:160, emoji:'📷', rating:4.6, reviews:95, badge:'sale', stock:12 },
+    { id:6, name:'1TB NVMe SSD', category:'tech', desc:'7000MB/s read speed, PCIe 4.0, PS5 compatible.', price:99, old:null, emoji:'💾', rating:4.9, reviews:567, badge:'top', stock:60 },
+    { id:7, name:'Premium Black Hoodie', category:'clothing', desc:'100% organic cotton, modern cut, kangaroo pocket with inner zipper.', price:55, old:75, emoji:'🧥', rating:4.7, reviews:203, badge:'sale', stock:35 },
+    { id:8, name:'Runner X Sneakers', category:'clothing', desc:'Reactive cushioning sole, breathable mesh upper, ultra-lightweight.', price:120, old:null, emoji:'👟', rating:4.8, reviews:342, badge:'top', stock:20 },
+    { id:9, name:'Snapback Cap', category:'clothing', desc:'6 structured panels, stain-resistant technical fabric, precise back adjustment.', price:32, old:null, emoji:'🧢', rating:4.4, reviews:88, badge:'new', stock:50 },
+    { id:10, name:'LED Desk Lamp', category:'home', desc:'3 color modes, 10 brightness levels, built-in wireless phone charging.', price:68, old:90, emoji:'💡', rating:4.6, reviews:156, badge:'sale', stock:18 },
+    { id:11, name:'WiFi Smart Plug', category:'home', desc:'App control, Alexa & Google Home compatible, real-time power monitoring.', price:24, old:null, emoji:'🔌', rating:4.5, reviews:290, badge:'new', stock:80 },
+    { id:12, name:'Automatic Coffee Maker', category:'home', desc:'15-bar pressure, milk frother, 12 programmable recipes, 1.8L tank.', price:189, old:250, emoji:'☕', rating:4.9, reviews:721, badge:'top', stock:5 },
   ];
 
   let cart = [];
@@ -273,13 +252,13 @@
   function renderProducts() {
     const p = getFiltered();
     const grid = document.getElementById('products-grid');
-    document.getElementById('result-count').textContent = `${p.length} producto${p.length !== 1 ? 's' : ''} encontrado${p.length !== 1 ? 's' : ''}`;
+    document.getElementById('result-count').textContent = `${p.length} product${p.length !== 1 ? 's' : ''} found`;
     grid.innerHTML = p.map(prod => {
       const inCart = cart.find(c => c.id === prod.id);
       return `<div class="product-card">
         <div class="product-img">${prod.emoji}</div>
         <div class="product-body">
-          <span class="product-badge ${prod.badge === 'sale' ? 'sale' : ''}">${prod.badge === 'new' ? 'Nuevo' : prod.badge === 'sale' ? 'Oferta' : 'Top'}</span>
+          <span class="product-badge ${prod.badge === 'sale' ? 'sale' : ''}">${prod.badge === 'new' ? 'New' : prod.badge === 'sale' ? 'Sale' : 'Top'}</span>
           <div class="product-name">${prod.name}</div>
           <div class="rating">
             <span class="stars">${'★'.repeat(Math.floor(prod.rating))}${'☆'.repeat(5-Math.floor(prod.rating))}</span>
@@ -288,9 +267,9 @@
           <div class="product-desc">${prod.desc}</div>
           <div class="product-footer">
             <div class="product-price">$${prod.price}${prod.old ? `<span class="old">$${prod.old}</span>` : ''}</div>
-            <button class="add-btn ${inCart ? 'added' : ''}" onclick="addToCart(${prod.id},event)">${inCart ? '✓ Agregado' : '+ Agregar'}</button>
+            <button class="add-btn ${inCart ? 'added' : ''}" onclick="addToCart(${prod.id},event)">${inCart ? '✓ Added' : '+ Add'}</button>
           </div>
-          ${prod.stock < 10 ? `<div class="stock-low">⚠ Solo ${prod.stock} en stock</div>` : ''}
+          ${prod.stock < 10 ? `<div class="stock-low">⚠ Only ${prod.stock} left in stock</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -302,10 +281,8 @@
     const existing = cart.find(c => c.id === id);
     if (existing) existing.qty++;
     else cart.push({ ...prod, qty: 1 });
-    updateCartBadge();
-    renderProducts();
-    renderCart();
-    showToast(`${prod.emoji} ${prod.name} agregado al carrito`);
+    updateCartBadge(); renderProducts(); renderCart();
+    showToast(`${prod.emoji} ${prod.name} added to cart`);
   }
 
   function updateCartBadge() {
@@ -319,7 +296,7 @@
     const container = document.getElementById('cart-items');
     const totalEl = document.getElementById('cart-total');
     if (cart.length === 0) {
-      container.innerHTML = '<div class="cart-empty">Tu carrito está vacío</div>';
+      container.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
       totalEl.style.display = 'none';
       return;
     }
@@ -336,7 +313,7 @@
             <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
           </div>
         </div>
-        <button class="remove-btn" onclick="removeItem(${item.id})">✕ Quitar</button>
+        <button class="remove-btn" onclick="removeItem(${item.id})">✕ Remove</button>
       </div>
     `).join('');
     const subtotal = cart.reduce((s,c) => s + c.price * c.qty, 0);
@@ -374,27 +351,18 @@
     document.getElementById('checkout-modal').classList.add('open');
   }
 
-  function closeCheckout() {
-    document.getElementById('checkout-modal').classList.remove('open');
-  }
+  function closeCheckout() { document.getElementById('checkout-modal').classList.remove('open'); }
 
   function processPayment() {
     document.getElementById('checkout-content').innerHTML = `
       <div class="success-screen">
         <div class="success-icon">✅</div>
-        <h3>¡Pedido Confirmado!</h3>
-        <p style="margin-bottom:.75rem">Tu pedido ha sido procesado exitosamente.</p>
-        <p style="color:var(--accent);font-size:.9rem;font-weight:600">Número de orden: #${Math.floor(Math.random()*90000)+10000}</p>
-        <p style="color:var(--muted);font-size:.8rem;margin-top:.5rem">Recibirás un email de confirmación en breve.</p>
-        <button onclick="resetCheckout()" style="margin-top:1.5rem;background:var(--accent);border:none;border-radius:9px;padding:.7rem 1.5rem;color:white;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;">Seguir comprando</button>
+        <h3>Order Confirmed!</h3>
+        <p style="margin-bottom:.75rem">Your order has been successfully processed.</p>
+        <p style="color:var(--accent);font-size:.9rem;font-weight:600">Order #${Math.floor(Math.random()*90000)+10000}</p>
+        <p style="color:var(--muted);font-size:.8rem;margin-top:.5rem">A confirmation email will be sent shortly.</p>
+        <button onclick="location.reload()" style="margin-top:1.5rem;background:var(--accent);border:none;border-radius:9px;padding:.7rem 1.5rem;color:white;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;">Keep Shopping</button>
       </div>`;
-  }
-
-  function resetCheckout() {
-    cart = []; updateCartBadge(); renderProducts();
-    closeCheckout();
-    document.getElementById('checkout-content').innerHTML = '';
-    location.reload();
   }
 
   function setCategory(cat, btn) {
