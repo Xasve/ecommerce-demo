@@ -1,59 +1,59 @@
-# 🛒 Plataforma E-Commerce
+# 🛒 E-Commerce Platform
 
-Demo funcional de una tienda online completa construida con HTML, CSS y JavaScript vanilla. Muestra las capacidades de desarrollo frontend incluyendo gestión de estado, UI dinámica y flujos de usuario completos.
+Fully functional online store demo built with HTML, CSS, and vanilla JavaScript. Showcases frontend development skills including state management, dynamic UI, and complete user flows.
 
-## ✨ Funcionalidades
+## Features
 
-- **Catálogo de productos** con 12 productos en 3 categorías (Tecnología, Ropa, Hogar)
-- **Filtros y búsqueda** en tiempo real por nombre, categoría, oferta y popularidad
-- **Ordenamiento** por precio y calificación
-- **Carrito de compras** con persistencia durante la sesión, ajuste de cantidades y eliminación de items
-- **Checkout completo** con formulario de datos personales, envío y tarjeta de crédito
-- **Pantalla de confirmación** con número de orden generado
-- **Notificaciones toast** al agregar productos
-- **Diseño responsive** adaptado a móvil, tablet y escritorio
+- **Product catalog** with 12 products across 3 categories (Tech, Clothing, Home)
+- **Real-time filters & search** by name, category, sale status, and popularity
+- **Sorting** by price and rating
+- **Shopping cart** with session persistence, quantity adjustments, and item removal
+- **Full checkout flow** with contact info, shipping address, and card payment form
+- **Order confirmation** screen with generated order number
+- **Toast notifications** when adding products
+- **Responsive design** for mobile, tablet, and desktop
 
-## 🧰 Stack Técnico
+## Tech Stack
 
-| Capa | Tecnología |
-|------|-----------|
+| Layer | Technology |
+|-------|-----------|
 | Frontend | HTML5, CSS3, JavaScript ES6+ |
 | UI | CSS Grid, Flexbox, Custom Properties |
-| Tipografía | Inter (Google Fonts) |
-| Íconos | SVG inline |
+| Typography | Inter (Google Fonts) |
+| Icons | Inline SVG |
 
-> **Stack en producción:** React · Node.js · MongoDB · JWT Auth · Stripe API
+> **Production stack:** React · Node.js · MongoDB · JWT Auth · Stripe API
 
-## 🚀 Cómo correr el proyecto
+## Getting Started
 
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/Xasve/ecommerce-demo.git
 
-# Abrir en el navegador (no requiere servidor)
+# Open in browser (no server required)
 open index.html
 ```
 
-O simplemente visita el **[Demo en vivo →](https://xasve.github.io/ecommerce-demo)**
+Or visit the **[Live Demo →](https://xasve.github.io/ecommerce-demo)**
 
-## 📁 Estructura
+## Project Structure
 
 ```
 ecommerce-demo/
-└── index.html      # App completa (HTML + CSS + JS)
+└── index.html      # Full app (HTML + CSS + JS)
 ```
 
-## 📸 Preview
+## Preview
 
-El proyecto incluye:
-- Navbar con buscador y contador de carrito
-- Grid de productos con badges (Nuevo / Oferta / Top)
-- Panel lateral del carrito con animación
-- Modal de checkout con validación de formulario
-- Confirmación de pedido con número de orden
+The project includes:
+- Sticky navbar with search bar and cart counter
+- Product grid with badges (New / Sale / Top)
+- Sliding cart panel with animation
+- Checkout modal with form validation
+- Order confirmation with order number
 
-## 👨‍💻 Autor
+## Author
 
-**Ethan Barboza** — Full Stack Developer Freelance
+**Ethan Barboza** — Full Stack Developer · Freelance
 📧 ethan.barboza10@gmail.com
 🌐 [xasve.github.io](https://xasve.github.io)
